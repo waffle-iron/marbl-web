@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html ng-app="myApp">
 
-<head>
-<meta charset="utf-8">
-<title>GO!</title>
 
-</head>
-  <body>
+
+  <body ng-controller = "eventController as meep">
 
 <form ng-submit="meep.newEvent(meep.event)">
       <p>Catagory: <input type="text" ng-model="meep.event.category"></p>
       <p>Event Title: <input type='text' ng-model = "meep.event.title"></p>
       <p>Event Details: <input type="text" ng-model = "meep.event.detail"></p>
       <p>Event Date: <input type="text" ng-model ="meep.event.date"></p>
-      <p>Event coordinates-x: <input type="text" ng-model="meep.event.coordinates.long"></p>
-      <p>Event coordinates-y: <input type="text" ng-model="meep.event.coordinates.lat"></p>
       Event Address Street: <input type="text" ng-model = "meep.event.address.street"><br>
       Event Address City: <input type="text" ng-model = "meep.event.address.city"><br>
       Event Address Zip: <input type="text" ng-model = "meep.event.address.zip"><br>
       <input type="submit" value="Add Event">
 </form>
 
-  </body>
-</html>
+
+
+</body>
