@@ -1,0 +1,10 @@
+<h3>Login</h3>
+  <div ng-controller = "UserController as meep">
+
+<p ng-repeat="error in loginErrors">{{error.message}}</p>
+  <form ng-submit='meep.loginUser(meep.user)'>
+    <input placeholder="email" type='text' ng-model="meep.user.email">
+    <input placeholder="password" type='text' ng-model="meep.user.password">
+    <input type="submit" value="Login">
+  </form>
+  </div>
