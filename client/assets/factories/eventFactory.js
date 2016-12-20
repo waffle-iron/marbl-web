@@ -1,19 +1,16 @@
 myApp.factory('eventFactory', ['$http', function($http){
 var factory = {}
 
-factory.getevents = function(callback){
-  $http.get('/getevents').then(function(returned_data){
+factory.showevents = function(callback){
+  $http.get('/showevents').then(function(returned_data){
+    console.log(returned_data.data)
     callback(returned_data.data);
   })
 }
 
-factory.addEvent = function(events,callback){
+factory.newEvent = function(events, callback){
   console.log("factor got events", events);
-  $http.post({
-    method:"Post",
-    url:"addevent",
-    data: events
-  }).then(function(returned_data){
+    $http.post('/newevent', events).then(function(returned_data){
     console.log("factory recieved this data", returned_data.data);
     callback(returned_data.data)
   })

@@ -9,16 +9,20 @@ var events = require('../controllers/events.js');
 //   }
 // }
 
-
 module.exports = function(app){
-  app.post('/login', events.loginAdmin)
+  app.get('/showevents', events.showevents);
+  // app.post('/getevents', events.loginAdmin);
+  app.post('/newevent', events.newevent);
+  app.post('/login', events.loginAdmin);
 
+  app.use(userAuth);
+  // app.post('/logout', mentors.logout);
 
 };
-  // function userAuth(req,res,next){
-  //   if(req.session.user){
-  //     next();
-  //   }else{
-  //     res.sendStatus(401);
-  //   }
-  // }
+  function userAuth(req,res,next){
+    if(req.session.user){
+      next();
+    }else{
+      res.sendStatus(401);
+    }
+  }

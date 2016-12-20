@@ -7,7 +7,7 @@ myApp.controller('UserController', ['$scope', "LoginFactory", "$location", funct
       if(data.hasOwnProperty('errors')){
         $scope.loginErrors=data.errors
       }else{
-        // $location.path('/')
+        $location.path('/addEvent')
         console.log("go somehwere");
       }
     })

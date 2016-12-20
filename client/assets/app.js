@@ -25,6 +25,11 @@ $httpProvider.interceptors.push(
     controller: 'eventController',
     controllerAs:"meep"
   })
+  .when('/allevents',{
+      templateUrl: 'assets/partials/allevents.html',
+      // controller: 'newMentorController',
+      // controllerAs: "meep"
+  })
   // .when('/mentor/signup',{
   //     templateUrl: 'assets/partials/mentor/signup.html',
   //     controller: 'newMentorController',

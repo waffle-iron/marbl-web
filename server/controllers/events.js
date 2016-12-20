@@ -4,16 +4,39 @@ var Admin = mongoose.model('Admin');
 
 
 function eventController(){
-//   this.registerMentor = function(req,res){
-//     console.log(req.body)
-//     Mentor.create(req.body, function(err, result) {
-//       if(err) {
-//         res.json(err);
-//       } else {
-//      res.json(result);
-//    }
-//   })
-//   }
+
+    this.showevents = function(req,res){
+      Event.find({}, function(err, events) {
+        if(err) {
+          res.json(err);
+        } else {
+          console.log(events)
+          res.json(events);
+    }
+    })
+    }
+      this.newevent = function(req,res){
+        console.log("in events.js")
+        console.log(req.body)
+        Event.create(req.body, function(err, result) {
+          if(err) {
+            res.json(err);
+          } else {
+                  console.log("We made an event")
+                  res.json(result);
+          }
+   })
+    }
+    //   this.registerMentor = function(req,res){
+    //     console.log(req.body)
+    //     Mentor.create(req.body, function(err, result) {
+    //       if(err) {
+    //         res.json(err);
+    //       } else {
+    //      res.json(result);
+    //    }
+    //   })
+    //   }
 //   this.registerMentee = function(req,res){
 //     console.log(req.body)
 //     Mentee.create(req.body, function(err, result) {
@@ -50,10 +73,15 @@ function eventController(){
       }
     }}
     Admin.findOne({email:req.body.email}).exec(function(err,user){
+      console.log(user)
       if(!req.body.email||!req.body.password || !user){
+        console.log(errors)
+        console.log("first", req.body.email, req.body.password, user)
         res.json(errors)
       }else{
         if(user.password != req.body.password){
+          console.log(errors)
+          console.log("second",req.body.password)
           res.json(errors);
         }else{
             req.session.user = {
