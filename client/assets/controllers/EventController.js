@@ -1,14 +1,20 @@
 myApp.controller('eventController', ['eventFactory', '$location', function(eventFactory, $location){
 
   this.newEvent = function newEvent(events){
-    eventFactory.newEvent(events, function(data){
-      console.log("adding event", events);
     geocodeAddress(events, function(lat, long){
       console.log("in the callback");
-      console.log(lat);
-      events.lat = lat
-      events.long = long
-      })
+
+      events.coordinatesLong = long
+      events.coordinatesLat = lat
+      console.log(events);
+      // events.coordinates= {"long":long}
+      // events.coordinates.lat = lat;
+      // events.coordinates.long = long
+
+    eventFactory.newEvent(events, function(data){
+      // console.log("adding event", data);
+
+
       if(data.hasOwnProperty('errors')){
 
       }else {
@@ -16,7 +22,8 @@ myApp.controller('eventController', ['eventFactory', '$location', function(event
         console.log("it worked i think");
       }
     })
-  }
+  })
+}
 
   // this.mapPage = function initMap(geoAddress) {
   //
@@ -36,7 +43,7 @@ myApp.controller('eventController', ['eventFactory', '$location', function(event
     var geocoder = new google.maps.Geocoder();
 
     function geocodeAddress(geoAddress, callback) {
-      console.log("have this information", geoAddress.address );
+      // console.log("have this information", geoAddress.address );
       var address = geoAddress.address.street;
       geocoder.geocode({'address': address}, function(results, status) {
         if (status === 'OK') {
@@ -50,8 +57,8 @@ myApp.controller('eventController', ['eventFactory', '$location', function(event
 
           callback(results[0].geometry.location.lat(), results[0].geometry.location.lng());
 
-          console.log("got the latitude", results[0].geometry.location.lat());
-          console.log("got the longitude", results[0].geometry.location.lng());
+          // console.log("got the latitude", results[0].geometry.location.lat());
+          // console.log("got the longitude", results[0].geometry.location.lng());
         } else {
           alert('Geocode was not successful for the following reason: ' + status);
         }

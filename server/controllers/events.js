@@ -19,6 +19,7 @@ function eventController(){
       this.newevent = function(req,res){
         console.log("in events.js")
         console.log(req.body)
+        // console.log(req.body.coordinatesx, req.body.coordinatesy);
         Event.create(req.body, function(err, result) {
           if(err) {
             res.json(err);
