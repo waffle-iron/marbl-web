@@ -10,6 +10,7 @@ myApp.controller('eventController', ['eventFactory', '$location', function(event
       events.long = long
       })
       if(data.hasOwnProperty('errors')){
+
       }else {
         $location.path('/allevents')
         console.log("it worked i think");

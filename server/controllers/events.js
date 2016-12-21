@@ -11,7 +11,8 @@ function eventController(){
           res.json(err);
         } else {
           console.log(events)
-          res.json(events);
+          var data = {events}
+          res.json(data);
     }
     })
     }
