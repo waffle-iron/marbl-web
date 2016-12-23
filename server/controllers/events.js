@@ -43,23 +43,35 @@ function eventController(){
     }
 
     this.update = function(req, res){
-    Event.findOne({_id:req.params.id}, function(err, myevent){
+      console.log("made it to the backened with this information",req.params.id, req.body);
+    Event.findOne({_id:req.params.id}, function(err, myEvent){
       if(err){
+        console.log("could not find friend",myEvent);
         res.json(err)
       }else{
-        myevent.title = req.body.title
-        myevent.detail = req.body.detail
-        myevent.date = req.body.date
-        myevent.coordinatesLong = req.body.coordinatesLong
-        myevent.coordinatesLat = req.body.coordinatesLat
-        myevent.address.street = req.body.address.street
-        myevent.address.city = req.body.address.city
-        myevent.address.zip= req.body.address.zip
-        myevent.category= req.body.category
-        myevent.save(function(err, updatedEvent){
+        myEvent.title = req.body.title
+        myEvent.detail = req.body.detail
+        myEvent.date = req.body.date
+        myEvent.coordinatesLong = req.body.coordinatesLong
+        myEvent.coordinatesLat = req.body.coordinatesLat
+
+        var newAddress = {
+          "street": req.body.address.street,
+          "city": req.body.address.city,
+          "zip": req.body.address.zip
+        }
+
+        // myEvent.address.street = req.body.address.street
+        // myEvent.address.city = req.body.address.city
+        // myEvent.address.zip= req.body.address.zip
+        myEvent.address = newAddress
+        myEvent.category = req.body.category
+        myEvent.save(function(err, updatedEvent){
           if(err){
+            console.log("could not save", updatedEvent);
             res.json(err)
           }else{
+            console.log("updatedEvent",updatedEvent);
             res.json(updatedEvent);
           }
         })
