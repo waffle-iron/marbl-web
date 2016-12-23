@@ -1,5 +1,6 @@
 myApp.controller('eventController', ['eventFactory', 'UserFactory', '$location','$routeParams', function(eventFactory, UserFactory, $location, $routeParams){
   var _this = this
+
   this.newEvent = function newEvent(events){
     geocodeAddress(events, function(lat, long){
       console.log("in the callback");
@@ -25,6 +26,12 @@ myApp.controller('eventController', ['eventFactory', 'UserFactory', '$location',
   })
 }
 
+  this.editShow = function editShow(eventi){
+    console.log("edit function to populate information", eventi);
+    _this.edits = eventi;
+    console.log(_this.edits);
+  }
+
 
     function getAll(){
       eventFactory.showevents(function(events){
@@ -41,7 +48,8 @@ myApp.controller('eventController', ['eventFactory', 'UserFactory', '$location',
 
     function geocodeAddress(geoAddress, callback) {
       // console.log("have this information", geoAddress.address );
-      var address = geoAddress.address.street;
+      var address = geoAddress.address.street+", "+geoAddress.address.zip;
+      console.log(address);
       geocoder.geocode({'address': address}, function(results, status) {
         if (status === 'OK') {
           // resultsMap.setCenter(results[0].geometry.location);
@@ -61,13 +69,20 @@ myApp.controller('eventController', ['eventFactory', 'UserFactory', '$location',
       });
     }
 
-    this.edit = function edit(eventId, myEvent){
-      eventFactory.edit(eventId, myEvent, function(data){
+    this.editEvent = function editEvent(eventId, myEvent){
+      console.log("myEvent",eventId, myEvent);
+      geocodeAddress(myEvent, function(lat,long){
+        myEvent.coordinatesLong = long
+        myEvent.coordinatesLat = lat
+
+      eventFactory.editEvent(eventId, myEvent, function(data){
         if(data.hasOwnProperty('errors')){
           console.log("errors");
         }else{
+          getAll()
           $location.path('/addEvent')
         }
+        })
       })
     }
 
@@ -82,9 +97,7 @@ myApp.controller('eventController', ['eventFactory', 'UserFactory', '$location',
       })
     }
 
-    this.sendtoEdit=function sendtoEdit(eventi){
 
-    }
 
     this.newAdmin = function newAdmin(admin){
       console.log(admin);
@@ -105,10 +118,10 @@ myApp.controller('eventController', ['eventFactory', 'UserFactory', '$location',
 
 
 
-      console.log(eventi.address.street);
+      // console.log(eventi.address.street);
       _this.showhidden = eventi
 
-      console.log("this is working");
+      // console.log("this is working");
     }
 
     this.hoverOut = function hoverOut(){

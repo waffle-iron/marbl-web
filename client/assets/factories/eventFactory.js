@@ -16,7 +16,8 @@ factory.newEvent = function(events, callback){
   })
 }
 
-factory.edit = function(eventId, myEvent, callback){
+factory.editEvent = function(eventId, myEvent, callback){
+  console.log("got event id in factory", eventId);
   $http.post('/edit/'+eventId, myEvent).then(function(returned_data){
     callback(returned_data.data)
   })
