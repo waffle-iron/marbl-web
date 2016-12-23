@@ -23,10 +23,10 @@
     </div>
 
     <!-- <h2 id="addEventWord">Edit Event</h2> -->
-    <div class="address-boxE" ng-class="{'showDetails': meep.displayFlag }">
+    <div class="address-boxE" ng-class="{'showMe': meep.editFlag}">
       <form class="event-boxi" ng-submit="meep.editEvent( meep.edits._id, meep.event)" >
         <p>
-          <label>Category</label> <input class="addressField" type="text" ng-model="meep.event.category" placeholder="{{meep.edits.category}}">
+          <label>Category{{meep.editFlag}}</label> <input class="addressField" type="text" ng-model="meep.event.category" placeholder="{{meep.edits.category}}">
           <label>Event Title</label> <input class="addressField" type='text' ng-model = "meep.event.title"  placeholder="{{meep.edits.title}}">
           <label>Event Details</label> <input class="addressField" type="text" ng-model = "meep.event.detail"  placeholder="{{meep.edits.detail}}">
           <label>Event Date</label> <input class="addressField" type="date" ng-model ="meep.event.date" placeholder="{{meep.edits.date | date: 'longDate'}}" >

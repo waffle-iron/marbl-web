@@ -106,15 +106,6 @@ body {
       /*margin-left: 1px;*/
     }
 
-    .userInput {
-      width: 200px;
-      margin-top: 20px;
-      bottom: 100px;
-      left: 700px;
-      position: absolute;
-
-      outline: 1px dotted red;
-    }
 
     .editButton {
       visibility: hidden;
@@ -150,10 +141,20 @@ body {
       text-align: left;
     }
 
+/*--------------------------->User input informations*/
+    .userInput {
+      width: 200px;
+      margin-top: 20px;
+      bottom: 5px;
+      left: 1000px;
+      position: absolute;
+
+      outline: 1px dotted red;
+    }
 
 
 
-
+/*#############################################*/
 /*-----------------------------------this part is the pop up portion*/
 .details {
   width: 200px;
@@ -188,15 +189,18 @@ body {
     margin-left: 5px;
   }
 
-
+/*#####################################################*/
 /*------------------------------------edit box pop up section*/
-  .show-edit{
-    visibility: visible;
+
+  .showMe{
+    /*color: red !important;
+    background-color: red !important;*/
+    visibility: visible !important;
   }
 
   .address-boxE {
     position: absolute;
-    bottom: -560px;
+    bottom: -540px;
     display: inline-block;
     vertical-align: top;
     margin-left: 10px;
@@ -206,7 +210,7 @@ body {
       padding-left: 5px;
       background-color: #A0BABD;
       border-radius: 10px;
-      /*visibility: hidden;*/
+      visibility: hidden;
       /*z-index: 1;*/
   }
 
@@ -231,7 +235,7 @@ body {
 
 
 
-
+/*################################################*/
 /*-------------------------first partial for our login page*/
     .loginBox {
       border: solid black 2px;
