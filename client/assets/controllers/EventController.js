@@ -26,12 +26,6 @@ myApp.controller('eventController', ['eventFactory', 'UserFactory', '$location',
   })
 }
 
-  this.editShow = function editShow(eventi){
-    console.log("edit function to populate information", eventi);
-    _this.edits = eventi;
-    console.log(_this.edits);
-  }
-
 
     function getAll(){
       eventFactory.showevents(function(events){
@@ -69,7 +63,20 @@ myApp.controller('eventController', ['eventFactory', 'UserFactory', '$location',
       });
     }
 
+    this.editFlag = false;
+
+    this.editShow = function editShow(eventi){
+      _this.editFlag = true;
+      console.log("edit function to populate information", eventi);
+      _this.edits = eventi;
+      console.log(_this.editFlag);
+    }
+
+
+
     this.editEvent = function editEvent(eventId, myEvent){
+      _this.editFlag = false
+      console.log(_this.editFlag);
       console.log("myEvent",eventId, myEvent);
       geocodeAddress(myEvent, function(lat,long){
         myEvent.coordinatesLong = long
@@ -110,7 +117,9 @@ myApp.controller('eventController', ['eventFactory', 'UserFactory', '$location',
       })
     }
 
-    var oneEvent = [];
+
+
+
     this.displayFlag = false;
     this.hoverIn = function hoverIn(eventi){
 
@@ -128,5 +137,7 @@ myApp.controller('eventController', ['eventFactory', 'UserFactory', '$location',
       _this.displayFlag = false;
 
     }
+
+
 
 }])
