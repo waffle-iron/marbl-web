@@ -6,7 +6,14 @@
     <div class="address-box">
       <form id="event-box" ng-submit="meep.newEvent(meep.event)">
         <p>
-          <label>Category</label> <input class="addressField" type="text" ng-model="meep.event.category">
+          <label>Category</label> <select class="addressField" type="text" ng-model="meep.event.category">
+          <option>Arts</option>
+          <option>Entertainment</option>
+          <option>Food</option>
+          <option>Drinks</option>
+          <option>Classes</option>
+          <option>Social</option>
+          </select>
           <label>Event Title</label> <input class="addressField" type='text' ng-model = "meep.event.title">
           <label>Event Details</label> <input class="addressField" type="text" ng-model = "meep.event.detail">
           <label>Event Date</label> <input class="addressField" type="date" ng-model ="meep.event.date">
