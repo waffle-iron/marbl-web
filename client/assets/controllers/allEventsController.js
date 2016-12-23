@@ -5,7 +5,6 @@ function allEventsController(eventFactory, $location, $routeParams){
 
   function showevents(){
     eventFactory.showevents($routeParams.id, function(data){
-      console.log(data)
       _this.showevents=data;
     })
   }

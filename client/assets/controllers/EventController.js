@@ -18,7 +18,7 @@ myApp.controller('eventController', ['eventFactory', '$location', function(event
       if(data.hasOwnProperty('errors')){
 
       }else {
-        $location.path('/allevents')
+        $location.path('/showevents')
         console.log("it worked i think");
       }
     })

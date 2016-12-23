@@ -15,6 +15,11 @@ $httpProvider.interceptors.push(
 });
   $routeProvider
   .when('/',{
+      templateUrl: 'assets/partials/home.html',
+      //  controller: 'UserController',
+      //  controllerAs: "meep"
+  })
+  .when('/login',{
       templateUrl: 'assets/partials/loginpage.html',
        controller: 'UserController',
        controllerAs: "meep"
@@ -25,8 +30,8 @@ $httpProvider.interceptors.push(
     controller: 'eventController',
     controllerAs:"meep"
   })
-  .when('/allevents',{
-      templateUrl: 'assets/partials/allevents.html',
+  .when('/showevents',{
+      templateUrl: 'assets/partials/showevents.html',
       // controller: 'newMentorController',
       // controllerAs: "meep"
   })
