@@ -11,6 +11,10 @@ var events = require('../controllers/events.js');
 
 module.exports = function(app){
   app.get('/showevents', events.showevents);
+  app.get('/allEvents', events.allEvents)
+  app.post('/newAdmin', events.newAdmin)
+  app.post('/edit/:id',events.update)
+  app.post('/delete/:id', events.delete)
   // app.post('/getevents', events.loginAdmin);
   app.post('/newevent', events.newevent);
   app.post('/login', events.loginAdmin);

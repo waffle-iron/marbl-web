@@ -2,7 +2,7 @@ myApp.factory('eventFactory', ['$http', function($http){
 var factory = {}
 
 factory.showevents = function(callback){
-  $http.get('/showevents').then(function(returned_data){
+  $http.get('/allEvents').then(function(returned_data){
     console.log(returned_data.data)
     callback(returned_data.data);
   })
@@ -16,6 +16,17 @@ factory.newEvent = function(events, callback){
   })
 }
 
+factory.edit = function(eventId, myEvent, callback){
+  $http.post('/edit/'+eventId, myEvent).then(function(returned_data){
+    callback(returned_data.data)
+  })
+}
+
+factory.deleteEvent = function(eventId, callback){
+  $http.post('/delete/'+eventId).then(function(returned_data){
+    callback(returned_data.data)
+  })
+}
 
 return factory;
 }]);

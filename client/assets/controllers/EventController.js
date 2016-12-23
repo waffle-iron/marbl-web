@@ -1,5 +1,5 @@
-myApp.controller('eventController', ['eventFactory', '$location', function(eventFactory, $location){
-
+myApp.controller('eventController', ['eventFactory', 'UserFactory', '$location','$routeParams', function(eventFactory, UserFactory, $location, $routeParams){
+  var _this = this
   this.newEvent = function newEvent(events){
     geocodeAddress(events, function(lat, long){
       console.log("in the callback");
@@ -18,28 +18,25 @@ myApp.controller('eventController', ['eventFactory', '$location', function(event
       if(data.hasOwnProperty('errors')){
 
       }else {
-        $location.path('/showevents')
-        console.log("it worked i think");
+        $location.path('/addEvent')
+        getAll()
       }
     })
   })
 }
 
-  // this.mapPage = function initMap(geoAddress) {
-  //
-  //     var map = new google.maps.Map(document.getElementById('map'), {
-  //       zoom: 8,
-  //       center: {lat: -34.397, lng: 150.644}
-  //     });
-  //     var geocoder = new google.maps.Geocoder();
-  //
-  //     document.getElementById('submit').addEventListener('click', function() {
-  //       alert("have the maps with geo code", geocoder)
-  //       geocodeAddress(geocoder, map);
-  //     });
-  //   }
-    // var latitude;
-    // var longitude;
+
+    function getAll(){
+      eventFactory.showevents(function(events){
+        _this.events = events;
+
+      })
+    }
+
+    getAll()
+
+
+
     var geocoder = new google.maps.Geocoder();
 
     function geocodeAddress(geoAddress, callback) {
@@ -52,8 +49,7 @@ myApp.controller('eventController', ['eventFactory', '$location', function(event
             // map: resultsMap,
             position: results[0].geometry.location
           });
-          // latitude =
-          // longitude =
+
 
           callback(results[0].geometry.location.lat(), results[0].geometry.location.lng());
 
@@ -63,6 +59,61 @@ myApp.controller('eventController', ['eventFactory', '$location', function(event
           alert('Geocode was not successful for the following reason: ' + status);
         }
       });
+    }
+
+    this.edit = function edit(eventId, myEvent){
+      eventFactory.edit(eventId, myEvent, function(data){
+        if(data.hasOwnProperty('errors')){
+          console.log("errors");
+        }else{
+          $location.path('/addEvent')
+        }
+      })
+    }
+
+    this.deleteEvent = function deleteEvent(eventId){
+      console.log("this function worked and i have the id", eventId)
+      eventFactory.deleteEvent(eventId, function(data){
+        if(data.hasOwnProperty('errors')){
+          console.log("errors");
+        }else{
+          getAll();
+        }
+      })
+    }
+
+    this.sendtoEdit=function sendtoEdit(eventi){
+
+    }
+
+    this.newAdmin = function newAdmin(admin){
+      console.log(admin);
+      UserFactory.newAdmin(admin, function(data){
+        if(data.hasOwnProperty('errors')){
+        }else {
+          $location.path('/addEvent')
+          console.log("went to controller");
+        }
+      })
+    }
+
+    var oneEvent = [];
+    this.displayFlag = false;
+    this.hoverIn = function hoverIn(eventi){
+
+      _this.displayFlag = true;
+
+
+
+      console.log(eventi.address.street);
+      _this.showhidden = eventi
+
+      console.log("this is working");
+    }
+
+    this.hoverOut = function hoverOut(){
+      _this.displayFlag = false;
+
     }
 
 }])
