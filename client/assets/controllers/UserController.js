@@ -1,9 +1,9 @@
-myApp.controller('UserController', ['$scope', "LoginFactory", "$location", function($scope, LoginFactory, $location){
+myApp.controller('UserController', ['$scope', "UserFactory", "$location", function($scope, UserFactory, $location){
 
 
   this.loginUser = function(user){
     console.log(user);
-    LoginFactory.loginUser(user, function(data){
+    UserFactory.loginUser(user, function(data){
       if(data.hasOwnProperty('errors')){
         $scope.loginErrors=data.errors
       }else{

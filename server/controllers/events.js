@@ -16,6 +16,18 @@ function eventController(){
     }
     })
     }
+
+    this.allEvents = function(req,res){
+      Event.find({}, function(err, events) {
+        if(err) {
+          res.json(err);
+        } else {
+          // console.log(events)
+          res.json(events)
+    }
+    })
+    }
+
       this.newevent = function(req,res){
         console.log("in events.js")
         console.log(req.body)
@@ -27,47 +39,47 @@ function eventController(){
                   console.log("We made an event")
                   res.json(result);
           }
-   })
+        })
     }
-    //   this.registerMentor = function(req,res){
-    //     console.log(req.body)
-    //     Mentor.create(req.body, function(err, result) {
-    //       if(err) {
-    //         res.json(err);
-    //       } else {
-    //      res.json(result);
-    //    }
-    //   })
-    //   }
-//   this.registerMentee = function(req,res){
-//     console.log(req.body)
-//     Mentee.create(req.body, function(err, result) {
-//       if(err) {
-//         res.json(err);
-//       } else {
-//      res.json(result);
-//    }
-//   })
-//   }
-//   this.getAllMentors = function(req,res){
-//     Mentor.find({}, function(err, mentors) {
-//       if(err) {
-//         res.json(err);
-//       } else {
-//         res.json(mentors);
-//   }
-//   })
-//   }
-//   this.getAllMentees = function(req,res){
-//     Mentee.find({}, function(err, mentees) {
-//       if(err) {
-//         res.json(err);
-//       } else {
-//         res.json(mentees);
-//   }
-//   })
-//   }
-//
+
+    this.update = function(req, res){
+    Event.findOne({_id:req.params.id}, function(err, myevent){
+      if(err){
+        res.json(err)
+      }else{
+        myevent.title = req.body.title
+        myevent.detail = req.body.detail
+        myevent.date = req.body.date
+        myevent.coordinatesLong = req.body.coordinatesLong
+        myevent.coordinatesLat = req.body.coordinatesLat
+        myevent.address.street = req.body.address.street
+        myevent.address.city = req.body.address.city
+        myevent.address.zip= req.body.address.zip
+        myevent.category= req.body.category
+        myevent.save(function(err, updatedEvent){
+          if(err){
+            res.json(err)
+          }else{
+            res.json(updatedEvent);
+          }
+        })
+      }
+    })
+    }
+
+    this.delete = function(req, res){
+      Event.remove({_id: req.params.id}, function(err, result){
+        if(err){
+          console.log("error trying to delete");
+          res.json(err)
+        }else{
+          res.json(result)
+          console.log("delet was successful", result);
+        }
+      })
+    }
+
+
   this.loginAdmin = function(req,res){
     var errors = {errors:{
       general:{
@@ -92,6 +104,18 @@ function eventController(){
             }
             res.json(user);
         }
+      }
+    })
+  }
+
+  this.newAdmin = function(req, res){
+    console.log(req.body);
+    Admin.create(req.body, function(err, result){
+      if (err){
+        res.json(err);
+      }else{
+        console.log("created user", result);
+        res.json(result)
       }
     })
   }

@@ -1,3 +1,186 @@
-h2  {
-  color: red ;
+
+body {
+  background-image: url("square_bg_@2x.png");
+  /*background-color: blue;*/
+
+
 }
+
+#addEventWord{
+  width: 120px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+/*-----------------controlls the larger container*/
+.input-information {
+  align-items: flex-start;
+
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/*-----------------------this section controls the adding event field*/
+.address-box {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+  border: solid 1px grey;
+    /*display: table-row;*/
+    width: 330px;
+    padding-left: 5px;
+    background-color: #779ECB;
+    border-radius: 10px;
+}
+  .address-box p {
+
+    }
+
+  .address-box form {
+      display: table-row;
+    }
+
+    form-textbox{
+      font-size: 2em;
+    }
+  .addressField {
+    display: table-cell;
+    width: 270px;
+    height: 25px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  .address-box label {
+      display: table-cell;
+      margin-left: 10px;
+    }
+/*-----------------------Table data information that is displaying*/
+    .table-data {
+      background: #779ECB;
+      width: 560px;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+    .table-data th {
+      text-align: center;
+      border-left: solid grey 1px;
+      border-bottom: solid black 2px;
+    }
+    #categoryRow{
+      text-align: center;
+      width: 160px;
+      border-bottom: solid grey 1px;
+      /*margin-left: 1px;*/
+    }
+    #titleRow{
+
+      text-align: left;
+      width: 250px;
+      border-bottom: solid grey 1px;
+      /*margin-left: 1px;*/
+    }
+
+    #dateRow{
+      text-align: center;
+      width: 240px;
+      border-bottom: solid grey 1px;
+      /*margin-left: 1px;*/
+    }
+
+    .userInput {
+      width: 200px;
+      margin-top: 20px;
+    }
+
+    .editButton {
+      visibility: hidden;
+
+
+      margin-left: 10px;
+      height: 21px;
+      width: 33px;
+      /*background-color: blue;*/
+      border-radius: 7px;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    .deleteButton{
+      /*visibility: hidden;*/
+      margin-left: 3px;
+      height: 21px;
+      width: 33px;
+      font-size: 10px;
+      /*font-size:  2px;*/
+
+      border-radius: 7px;
+      background: url('trash.png');
+      background-position:center;
+      background-repeat:no-repeat;
+      float: right;
+
+    }
+    .deleteButton span{
+
+  }
+
+    .titleRow{
+      text-align: left;
+    }
+/*-----------------------------------this part is the pop up portion*/
+.details {
+  width: 200px;
+  height: 310px;
+  background-color: grey;
+  /*display: inline-block;*/
+  /*display: none;*/
+  visibility: hidden;
+
+  position: absolute;
+  top: -25px;
+  left: calc(100% + 5px);
+  border-radius: 10px;
+
+
+
+  -moz-transition: top 0.25s, left 0.25s, -moz-transform ease-in-out 0.25s;
+  -webkit-transition: top 0.25s, left 0.25s, -moz-transform ease-in-out 0.25s;
+  -o-transition: top 0.25s, left 0.25s, -moz-transform ease-in-out 0.25s;
+  transition: top 0.25s, left 0.25s, -moz-transform ease-in-out 0.25s;
+
+
+}
+
+.showDetails{
+  visibility: visible;
+
+  top: 0;
+}
+
+  .popText{
+    margin-left: 5px;
+  }
+
+
+/*-------------------------first partial for our login page*/
+    .loginBox {
+      border: solid black 2px;
+      width: 300px;
+    }
+    .log-submit{
+      margin-left: 10px;
+      margin-bottom: 10px;
+      height: 10px;
+      width: 70px;
+    }
+    .textfield {
+      width: 250px;
+      height: 24px;
+      margin-left: 10px;
+    }
+
+    .loginword{
+      margin-bottom: 0px;
+    }
