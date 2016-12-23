@@ -10,7 +10,6 @@ function eventController(){
         if(err) {
           res.json(err);
         } else {
-          console.log(events)
           var data = {events}
           res.json(data);
     }

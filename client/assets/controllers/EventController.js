@@ -17,9 +17,9 @@ myApp.controller('eventController', ['eventFactory', 'UserFactory', '$location',
 
 
       if(data.hasOwnProperty('errors')){
+
       }else {
         $location.path('/addEvent')
-        // console.log("it worked i think");
         getAll()
       }
     })
