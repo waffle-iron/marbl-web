@@ -148,8 +148,8 @@ body {
       bottom: 5px;
       left: 1000px;
       position: absolute;
-
-      outline: 1px dotted red;
+      visibility: hidden;
+      outline: 1px dotted grey;
     }
 
 
@@ -221,7 +221,7 @@ body {
       form-textbox{
         font-size: 2em;
       }
-    .addressField {
+    .addressFieldE {
       display: table-cell;
       width: 270px;
       height: 25px;
