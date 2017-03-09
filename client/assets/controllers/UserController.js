@@ -1,17 +1,16 @@
-myApp.controller('UserController', ['$scope', "UserFactory", "$location", function($scope, UserFactory, $location){
+myApp.controller('userController', ['$scope', "userFactory", "$location",
 
+function($scope, userFactory, $location){
 
-  this.loginUser = function(user){
+  this.newSignup = function(user){
     console.log(user);
-    UserFactory.loginUser(user, function(data){
+    userFactory.newSignup(user, function(data){
       if(data.hasOwnProperty('errors')){
         $scope.loginErrors=data.errors
-      }else{
-        $location.path('/addEvent')
-        console.log("go somehwere");
+      } else{
+        console.log("added to list");
+        $location.path('/NEEDTOADDFORMPATHHERE')
       }
     })
   }
-
-
-}])
+}]);

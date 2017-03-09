@@ -1,1 +1,100 @@
-<a href="#/login">Login</a>
+<div id="container">
+    <section id="cover">
+      <div class="wrapper">
+        <div id="covercontainer">
+          <img src="http://i.imgur.com/S4PLlu7.png" width="350" />
+</div>
+<br /><br /><br />
+          <!-- <h1>Hi howdy ho!</h1> -->
+          <h2>Make the world a smaller place.<br>
+            Sign up for our beta launch.</h2>
+
+            <div ng-controller="userController as meep">
+            <p ng-repeat='error in meep.signupErrors'>{{error.message}}</p>
+            <form id="form" class="growthloop">
+      		  <input id="name" type="text" placeholder="NAME" ng-model='meep.user.name'>
+            <input id="email" type="text" placeholder="E-MAIL" ng-model='meep.user.email'>
+      		  <input id="instagram" type="text" placeholder="INSTAGRAM" ng-model='meep.user.instagram'></input>
+        <input id="submit" type="submit" value="Join the MARBL community!" ng-click='meep.newSignup()'>
+      </form>
+      </div>
+
+      </div>
+    </section>
+</div>
+    <section id="about">
+    					<div class="wrapper">
+                <div id="aboutcontainer">
+                  <!-- <img src="http://www.freeiconspng.com/uploads/iphone-png-14.png" width="400" /> -->
+                 </div>
+                <h4>Gibberish</h4>
+                <h3>Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+                  Gibberish Gibberish Gibber ish ish
+        </h3>
+    					</div>
+  </section>
+
+  <section id="insta">
+        <div class="wrapper">
+          <!-- <h1>Follow us on Instagram</h1> -->
+          <div id="instacontainer">
+            <a href="">
+          <img src="assets/static/icons/ig.png" ></a>
+          <a href="">
+          <img src="assets/static/icons/fb.png"></a>
+          <a href="">
+          <img src="assets/static/icons/twitter.png"></a>
+          <script src="https://snapwidget.com/js/snapwidget.js"></script>
+          <iframe src="https://snapwidget.com/embed/348133" class="snapwidget-widget-mobile"
+          allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:90%; " />
+          </iframe>
+          <iframe src="https://snapwidget.com/embed/347709" class="snapwidget-widget-desk"
+          allowTransparency="true" frameborder="0" scrolling="yes" style="border:none; width:79.8%; margin-left: 4em;" />
+        </iframe>
+          <!-- <h1>We're @MARBLTravel!</h1> -->
+          </div>
+        </div>
+      </section>
+
+          <section id="footer">
+      <div class="wrapper">
+        <div id="footercontainer_left">
+          <ul style="list-style: none;">
+          <li><a href="">About</a></li>
+          <li><a href="">Contact Us</a></li>
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">Terms & Conditions</a></li>
+          <li style="margin-left: 8.9em; margin-top: 1em; "><a href="">
+        <img src="assets/static/icons/ig.png" ></a>
+        <a href="">
+        <img src="assets/static/icons/fb.png" ></a>
+        <a href="">
+        <img src="assets/static/icons/twitter.png" ></a>
+      </li>
+          </ul>
+        </div>
+
+        <div id="footercontainer_right">
+
+        </div>
+
+        <div id="footercopyright">
+          Copyright © 2017 MARBL All Rights Reserved.
+        </div>
+      </div>
+    </section>

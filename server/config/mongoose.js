@@ -19,7 +19,7 @@ var mongoose= require('mongoose'),
 /*
 *  database information
 */
-    dbURI = 'mongodb://localhost/goevents5';
+    dbURI = 'mongodb://localhost/marbl_beta';
 /*
 * Connect to the database
 */
