@@ -7,7 +7,6 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-session": "^1.14.2",
-    "cookie-session": "^3.10.10",
     "mongoose": "^4.7.3"
   },
   "devDependencies": {
