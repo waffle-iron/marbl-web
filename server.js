@@ -26,8 +26,6 @@ app.use(bp.urlencoded({extended:true}))
 app.use(bp.json({extended: true}));
 app.use( express.static( path.join( root, 'client')));
 app.use(session(sessionConfig));
-
-
 app.listen( 8000, function() {
   console.log( `server running on port 8000` );
 });
