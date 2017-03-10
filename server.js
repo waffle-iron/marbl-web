@@ -2,35 +2,28 @@
 
 var mongoose = require( 'mongoose' ),
     express  = require( 'express' ),
-    session = require('express-session'),
-    // cookieParser = require('cookie-parser'),
+    // session = require('express-session'),
+    cookieSession = require('cookie-session'),
     bp       = require('body-parser'),
     path     = require( 'path' ),
     root     = __dirname,
     port     = process.env.PORT || 8000,
     app      = express();
 
-// var MemoryStore = require('session-memory-store')(session);
+app.set('trust proxy', 1) // trust first proxy
 
-// app.use(cookieParser());
+app.use(cookieSession({
+name: 'session',
+keys: ['key1', 'key2']
+}));
 
-// app.use(session({
-//   name: 'JSESSION',
-//   secret: 'my secret',
-//   store: new MemoryStore(options)
-// }));
-
-var sess = {
-  secret: 'keyboard cat',
-  cookie: {}
-}
-
-if (app.get('env') === 'production') {
-  app.set('trust proxy', 1) // trust first proxy
-  sess.cookie.secure = true // serve secure cookies
-}
-
-app.use(session(sess))
+// app.get('/', function (req, res, next) {
+// // Update views
+// req.session.views = (req.session.views || 0) + 1
+//
+// // Write response
+// res.end(req.session.views + ' views')
+// });
 
 // var sessionConfig = {
 //      secret:'CookieMonster', // Secret name for decoding secret and such
@@ -51,7 +44,7 @@ app.use( express.static( path.join( root, 'client')));
 // app.use(session(sessionConfig));
 
 
-app.listen( 8000, function() {
+app.listen( 3000, function() {
   console.log( `server running on port 8000` );
 });
 
