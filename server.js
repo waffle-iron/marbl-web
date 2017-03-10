@@ -21,25 +21,12 @@ var sessionConfig = {
  }
 }
 
-var pg = require('pg');
-
-app.get('/db', function (request, response) {
-  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('SELECT * FROM test_table', function(err, result) {
-      done();
-      if (err)
-       { console.error(err); response.send("Error " + err); }
-      else
-       { response.render('pages/db', {results: result.rows} ); }
-    });
-  });
-});
-
 // app.use( express.static( path.join( root, 'bower_components' )));
 app.use(bp.urlencoded({extended:true}))
 app.use(bp.json({extended: true}));
 app.use( express.static( path.join( root, 'client')));
 app.use(session(sessionConfig));
+app.use(express.session({ store: new MongoStore({ db: 'some-database' }) }));
 
 
 app.listen( 8000, function() {
