@@ -3,16 +3,16 @@
 var mongoose = require( 'mongoose' ),
     express  = require( 'express' ),
     session = require('express-session'),
-    cookieParser = require('cookie-parser'),
+    // cookieParser = require('cookie-parser'),
     bp       = require('body-parser'),
     path     = require( 'path' ),
     root     = __dirname,
     port     = process.env.PORT || 8000,
     app      = express();
 
-var MemoryStore = require('session-memory-store')(session);
+// var MemoryStore = require('session-memory-store')(session);
 
-app.use(cookieParser());
+// app.use(cookieParser());
 
 // app.use(session({
 //   name: 'JSESSION',
