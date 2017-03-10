@@ -10,6 +10,8 @@
     "mongoose": "^4.7.3"
   },
   "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
     "mongo-clean": "^1.2.2"
   },
   "scripts": {
