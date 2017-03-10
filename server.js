@@ -26,8 +26,15 @@ app.use(bp.urlencoded({extended:true}))
 app.use(bp.json({extended: true}));
 app.use( express.static( path.join( root, 'client')));
 app.use(session(sessionConfig));
-app.use(express.session({ store: new MongoStore({ db: 'some-database' }) }));
+// app.use( express.session({ store: new MongoStore({ db: 'some-database' }) }));
 
+function sessionCleanup() {
+    sessionStore.all(function(err, sessions) {
+        for (var i = 0; i < sessions.length; i++) {
+            sessionStore.get(sessions[i], function() {} );
+        }
+    });
+}
 
 app.listen( 8000, function() {
   console.log( `server running on port 8000` );
