@@ -9,7 +9,9 @@
     "express-session": "^1.14.2",
     "mongoose": "^4.7.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mongo-clean": "^1.2.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
