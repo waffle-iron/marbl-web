@@ -19,10 +19,8 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/echeverria-oscar/Go2.git"
   },
   "bugs": {
-    "url": "https://github.com/echeverria-oscar/Go2/issues"
   },
-  "homepage": "https://github.com/echeverria-oscar/Go2#readme"
+  "homepage": ""
 }
