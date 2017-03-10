@@ -9,6 +9,7 @@ var mongoose = require( 'mongoose' ),
     port     = process.env.PORT || 8000,
     app      = express();
 
+var cookieSession = require('cookie-session');
 // var sessionConfig = {
 //      secret:'CookieMonster', // Secret name for decoding secret and such
 //      resave:false, // Don't resave session if no changes were made
@@ -21,12 +22,11 @@ var mongoose = require( 'mongoose' ),
 //  }
 // }
 
-var cookieSession = require('cookie-session')
-app.set('trust proxy', 1)
+app.set('trust proxy', 1);
 app.use(cookieSession({
   name: 'session',
   keys: ['key1', 'key2'],
-}))
+}));
 
 // app.use( express.static( path.join( root, 'bower_components' )));
 app.use(bp.urlencoded({extended:true}))
