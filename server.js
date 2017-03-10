@@ -3,12 +3,14 @@
 var mongoose = require( 'mongoose' ),
     express  = require( 'express' ),
     // session = require('express-session'),
-    cookieSession = require('cookie-session'),
     bp       = require('body-parser'),
     path     = require( 'path' ),
     root     = __dirname,
     port     = process.env.PORT || 8000,
     app      = express();
+
+var cookieSession = require('cookie-session');
+
 
 app.set('trust proxy', 1) // trust first proxy
 
