@@ -19,7 +19,7 @@ var mongoose= require('mongoose'),
 /*
 *  database information
 */
-    dbURI = 'mongodb://localhost/marbl_beta';
+    dbURI = 'mongodb://localhost/marbl_yc';
 /*
 * Connect to the database
 */

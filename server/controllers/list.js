@@ -4,6 +4,7 @@ var signups = mongoose.model('signup');
 
 function listController(){
 
+
   this.newSignup = function(req, res){
     console.log(req.body);
     signup.create(req.body, function(err, result){

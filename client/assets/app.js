@@ -17,21 +17,15 @@ $httpProvider.interceptors.push(
   .when('/',{
       templateUrl: 'assets/partials/home.html',
   })
-  .when('/login',{
-      templateUrl: 'assets/partials/loginpage.html',
-       controller: 'userController',
-       controllerAs: "meep"
+  .when('/privacy',{
+      templateUrl: 'assets/partials/privacy.html',
   })
 
-  .when('/addevent', {
-    templateUrl:'assets/partials/addevent.html',
-    controller: 'eventController',
+  .when('/welcome', {
+    templateUrl:'assets/partials/welcome.html',
+    controller: 'userController',
     controllerAs:"meep"
   })
-  .when('/showevents',{
-      templateUrl: 'assets/partials/showevents.html',
-  })
-
     .otherwise({
       redirectTo: '/'
     });

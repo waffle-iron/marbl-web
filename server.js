@@ -10,7 +10,7 @@ var mongoose = require( 'mongoose' ),
     app      = express();
 
 var sessionConfig = {
-     secret:'CookieMonster', // Secret name for decoding secret and such
+     secret:'FruitMonster', // Secret name for decoding secret and such
      resave:false, // Don't resave session if no changes were made
      saveUninitialized: true, // Don't save session if there was nothing initialized
      name:'myCookie', // Sets a custom cookie name

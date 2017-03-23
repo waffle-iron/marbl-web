@@ -1,7 +1,7 @@
 {
   "name": "express-login",
   "version": "1.0.0",
-  "description": "",
+  "description": "this",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -12,7 +12,13 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-jshint": "^1.1.0",
-    "mongo-clean": "^1.2.2"
+    "jshint-stylish": "^1.0.2",
+    "mongo-clean": "^1.2.2",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "jshint-stylish": "^1.0.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-nodemon": "^0.4.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,5 +27,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/brendak/"
+  "homepage": ""
 }
