@@ -25,3 +25,11 @@ if($('.main_h').length > 0){
         checkScroll();
     });
 }
+
+// intercept signups
+$('#form').submit(function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  console.log('we did it');
+});

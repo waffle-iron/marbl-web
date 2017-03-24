@@ -49,12 +49,16 @@
         So what you are you waiting for? Join the MARBL community today.
       <p/>
 
-      <div ng-controller="userController as meep">
-        <form id="form" class="growthloop">
-          <input id="name" type="text" placeholder="NAME" ng-model='meep.newuser.name'>
-          <input id="email" type="text" placeholder="E-MAIL" ng-model='meep.newuser.email'>
-          <input id="instagram" type="text" placeholder="INSTAGRAM" ng-model='meep.newuser.instagram'></input>
-          <input id="submit" type="submit" value="APPLY" ng-click='meep.newSignup()'>
+      <div>
+        <form
+          id="form"
+          class="growthloop"
+          action="http://api.marbl.io/v1/invites"
+          method="post">
+            <input id="name" name="name" type="text" placeholder="NAME" />
+            <input id="email" name="email" type="text" placeholder="E-MAIL" />
+            <input id="instagram" name="instagram" type="text" placeholder="INSTAGRAM" />
+            <input id="submit" name="submit" type="submit" value="APPLY" />
         </form>
       </div>
     </h3>
