@@ -478,12 +478,32 @@ About Section
 /* ==========================================================================
 // Welcome Page
 ========================================================================== */
-
+#page {
+  background-color: #DDD;
+}
+#page .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: -10.875em;
+}
+#page h3{
+  margin-right: 12%;
+}
 @media only screen and (max-width: 766px) {
-
-  #fbshare,
-  #sms {
-      margin-left: 15%;
+  #page h2 {
+      font-size: 20px;
+      text-align: left;
+      position: justify;
+      margin: 0 2em 0 0;
+  }
+  #page h3{
+      font-size: 18px;
+      text-align: left;
+      position: justify;
+      margin: 0 2em 0 0;
+  }
+  #page img{
+    width: 20%;
   }
 }
 
