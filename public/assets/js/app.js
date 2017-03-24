@@ -26,6 +26,10 @@ if($('.main_h').length > 0){
     });
 }
 
+$('.btn-join').click(function(e) {
+  document.getElementById('about').scrollIntoView();
+});
+
 // intercept signups
 $('#form').submit(function(e) {
   e.preventDefault();
