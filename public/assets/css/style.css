@@ -80,7 +80,7 @@ a:hover {
 section {
     position: relative;
     width: 100%;
-    height: 46.875em;
+    height: 56.875em;
     display: block;
     overflow: hidden;
 }
@@ -268,9 +268,21 @@ Landing Section
 ====================
 */
 
-#cover {
+#landing {
    background-image: url("https://media.giphy.com/media/3o7buf80PB3VVgpgNa/giphy.gif");
    background-size: cover;
+}
+
+#landing h2,
+#landing h3,
+#landing p {
+  color: #fff;
+  text-shadow: 1px 1px #333;
+  text-rendering: optimizeLegibility;
+}
+
+#cover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #cover h1,
@@ -294,6 +306,35 @@ Landing Section
        text-align: left;
        margin: -5em 2em 0 0;
    }
+   #landing h1,
+   #cover h1,
+   {
+       text-align: left;
+       position: justify;
+       z-index: 1;
+       font-size: 20px;
+   }
+   #landing h2
+   {
+       text-align: left;
+       position: justify;
+       margin: 0 2em 0 0;
+  }
+  #landing h3,
+  #cover h3
+  {
+      text-align: left;
+      position: justify;
+      margin: 0 2em 0 0;
+      font-size: 18px;
+  }
+  #cover img {
+      width: 90%;
+      position: center;
+      display: inline-block;
+      margin: 1em 3em 1em -0.5em;
+      padding: -5em;
+  }
 }
 
 .btn-join {
@@ -302,8 +343,8 @@ Landing Section
    padding: 15px;
    background: transparent;
    background-color: transparent;
-   color: #403882;
-   border: 1px solid #403882 !important;
+   color: #fff;
+   border: 1px solid #fff !important;
    text-align: center;
    text-decoration: none !important;
    text-transform: uppercase;
@@ -416,6 +457,36 @@ About Section
     }
 }
 
+@media only screen and (max-width: 766px) {
+    #about h4
+    {
+        text-align: left;
+        position: justify;
+        z-index: 1;
+        font-size: 20px;
+    }
+    #about h3,
+    #form
+    {
+        text-align: left;
+        position: justify;
+        margin: 0 2em 0 0;
+        font-size: 18px;
+    }
+}
+
+/* ==========================================================================
+// Welcome Page
+========================================================================== */
+
+@media only screen and (max-width: 766px) {
+
+  #fbshare,
+  #sms {
+      margin-left: 15%;
+  }
+}
+
 /* ==========================================================================
 // Privacy Policy
 ========================================================================== */
@@ -440,6 +511,29 @@ About Section
     #privacy img {
         width: 21%;
         margin: 0 0em 0 0em;
+    }
+    #privacy h4,
+    {
+        text-align: left;
+        position: justify;
+        z-index: 1;
+        font-size: 20px;
+    }
+    #privacy h2 {
+        text-align: left;
+        position: justify;
+        margin: 0 2em 0 0;
+    }
+    #privacy h5 {
+        text-align: left;
+        position: justify;
+        margin: 0 4em 0 0;
+    }
+    #privacy h3 {
+        text-align: left;
+        position: justify;
+        margin: 0 2em 0 0;
+        font-size: 18px;
     }
 }
 
@@ -641,7 +735,7 @@ nav ul a {
 
     #footercontainer_right {
         margin-left: 15%;
-        margin-top: 0%;
+        margin-top: 20%;
     }
 
     #footercontainer_right ul {
@@ -661,49 +755,3 @@ nav ul a {
         padding-right: 0.625em;
     }
 }
-
-/*
-@media only screen and (max-width: 766px) {
-    #cover h1,
-    #about h4,
-    #insta h1,
-    #privacy h4,
-    {
-        text-align: left;
-        position: justify;
-        z-index: 1;
-        font-size: 20px;
-    }
-    #privacy h2 {
-        text-align: left;
-        position: justify;
-        margin: 0 2em 0 0;
-    }
-    #privacy h5 {
-        text-align: left;
-        position: justify;
-        margin: 0 4em 0 0;
-    }
-    #cover h3,
-    #about h3,
-    #form,
-    #privacy h3 {
-        text-align: left;
-        position: justify;
-        margin: 0 2em 0 0;
-        font-size: 18px;
-    }
-    #cover img {
-        width: 90%;
-        position: center;
-        display: inline-block;
-        margin: 1em 3em 1em -0.5em;
-        padding: -5em;
-    }
-
-    #fbshare,
-    #sms {
-        margin-left: 15%;
-    }
-}
-*/
