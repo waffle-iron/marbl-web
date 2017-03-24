@@ -1,148 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>MARBL</title>
-  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css" media="screen" />
-</head>
-<body>
-  <header class="main_h">
-    <div class="row">
-      <a class="logo" href="http://marbl.io">
-        <img src="/assets/img/icons/MARBL.png" width="135px" />
-      </a>
-      <div class="mobile-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
+<% include partials/header %>
+
+<div id="container">
+  <section id="cover">
+    <div class="wrapper">
+      <div id="covercontainer"></div>
+
+      <br />
+
+      <h2>
+        Make the world a smaller place.
+      </h2>
+
+      <p>
+        <h3>
+          Join our invite-only community of global citizens
+          <br>
+          and inspire your next adventure.
+        </h3>
+      </p>
+
+      <br />
+
+      <div class='button' style="margin-left: 63px; width: 150px; height: 45px; font-size: 20px;"
+      onClick="document.getElementById('about').scrollIntoView();">
+        Join
       </div>
-      <nav>
-        <ul>
-        </ul>
-      </nav>
+
     </div>
-  </header>
+  </section>
+</div>
 
-  <div id="container">
-    <section id="cover">
-      <div class="wrapper">
-        <div id="covercontainer"></div>
+<section id="about">
+  <div class="wrapper">
+    <div id="aboutcontainer">
+      <img src="/assets/img/phone.png" width="330" />
+    </div>
 
-        <br />
+    <a href="about"></a>
+    <h3>
+      <p>
+        The world is big.But once you get out there, explore, and meet fellow adventurers,
+        it feels smaller—in the best way possible. That’s where MARBL comes in.
+        Think of us as a gathering place for your most well-traveled friends, where you can
+        get inspiration and learn the best kept travel secrets for your next bucket list adventure.
+      </p>
 
-        <h2>
-          Make the world a smaller place.
-        </h2>
+      <p>
+        So what you are you waiting for? Join the MARBL community today.
+      <p/>
 
-        <p>
-          <h3>
-            Join our invite-only community of global citizens
-            <br>
-            and inspire your next adventure.
-          </h3>
-        </p>
-
-        <br />
-
-        <div class='button' style="margin-left: 63px; width: 150px; height: 45px; font-size: 20px;"
-        onClick="document.getElementById('about').scrollIntoView();">
-          Join
-        </div>
-
+      <div ng-controller="userController as meep">
+        <form id="form" class="growthloop">
+          <input id="name" type="text" placeholder="NAME" ng-model='meep.newuser.name'>
+          <input id="email" type="text" placeholder="E-MAIL" ng-model='meep.newuser.email'>
+          <input id="instagram" type="text" placeholder="INSTAGRAM" ng-model='meep.newuser.instagram'></input>
+          <input id="submit" type="submit" value="APPLY" ng-click='meep.newSignup()'>
+        </form>
       </div>
-    </section>
+    </h3>
   </div>
+</section>
 
-  <section id="about">
-    <div class="wrapper">
-      <div id="aboutcontainer">
-        <img src="/assets/img/phone.png" width="330" />
-      </div>
-
-      <a href="about"></a>
-      <h3>
-        <p>
-          The world is big.But once you get out there, explore, and meet fellow adventurers,
-          it feels smaller—in the best way possible. That’s where MARBL comes in.
-          Think of us as a gathering place for your most well-traveled friends, where you can
-          get inspiration and learn the best kept travel secrets for your next bucket list adventure.
-        </p>
-
-        <p>
-          So what you are you waiting for? Join the MARBL community today.
-        <p/>
-
-        <div ng-controller="userController as meep">
-          <form id="form" class="growthloop">
-            <input id="name" type="text" placeholder="NAME" ng-model='meep.newuser.name'>
-            <input id="email" type="text" placeholder="E-MAIL" ng-model='meep.newuser.email'>
-            <input id="instagram" type="text" placeholder="INSTAGRAM" ng-model='meep.newuser.instagram'></input>
-            <input id="submit" type="submit" value="APPLY" ng-click='meep.newSignup()'>
-          </form>
-        </div>
-      </h3>
-    </div>
-  </section>
-
-  <section id="footer">
-    <div class="wrapper">
-      <div id="footercontainer_right">
-      <ul style="list-style: none;">
-        <li>
-          <a href="https://www.instagram.com/marbltravel/" target="_blank">
-            <img src="/assets/img/icons/ig.png" id="ig" />
-          </a>
-          <a href="https://www.facebook.com/MARBLtravel/" target="_blank">
-            <img src="/assets/img/icons/fb.png" id="fb" />
-          </a>
-          <a href="mailto:hello@marbl.io?Subject=Hello%20Marbl!">
-            <img src="/assets/img/icons/email.png" id="email" />
-          </a>
-        </li>
-        <li>
-          <a href="#/privacy">
-            &nbsp;&nbsp; Privacy Policy
-          </a>
-        </li>
-      </ul>
-      </div>
-    </div>
-  </section>
-
-  <script src="/assets/vendor/jquery/jquery.js"></script>
-  <script>
-    $(window).load( function(){
-      $('.main_h').addClass('sticky');
-    });
-
-    $(window).scroll(function() {
-        if ($(window).scrollTop() > 0) {
-            $('.main_h').removeClass('sticky');
-        } else {
-            $('.main_h').addClass('sticky');
-        }
-    });
-
-    function checkScroll(){
-        var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
-
-        if($(window).scrollTop() > startY){
-            $('.main_h').addClass("scrolled");
-        }else{
-            $('.main_h').removeClass("scrolled");
-        }
-    }
-
-    if($('.main_h').length > 0){
-        $(window).on("scroll load resize", function(){
-            checkScroll();
-        });
-    }
-
-    var vid = document.getElementById("bgvid");
-  </script>
-</body>
-</html>
+  <% include partials/footer %>

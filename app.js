@@ -25,10 +25,13 @@ app.set("view engine", "ejs");
 app.engine("html", require("ejs").renderFile);
 
 /** routes */
+app.get("/privacy", function(req, res) {
+  res.render("privacy");
+});
+
+/** routes */
 app.get("/welcome", function(req, res) {
-  res.render(__dirname + "/public/welcome.ejs", {
-    // ...
-  });
+  res.render("welcome");
 });
 
 /** handler for uncaught routes */
