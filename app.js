@@ -31,7 +31,18 @@ app.get("/privacy", function(req, res) {
 
 /** routes */
 app.get("/welcome", function(req, res) {
-  res.render("welcome");
+  if (!req.query || !req.query.code || !req.query.place) {
+    return res.redirect('/');
+  }
+
+  var
+    place = req.query.place,
+    code = req.query.code;
+
+  res.render("welcome", {
+    place: place,
+    code: code,
+  });
 });
 
 /** handler for uncaught routes */
