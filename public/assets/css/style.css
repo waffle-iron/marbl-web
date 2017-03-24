@@ -80,7 +80,8 @@ a:hover {
 section {
     position: relative;
     width: 100%;
-    height: 56.875em;
+    height: 90vh;
+    /*height: 56.875em;*/
     display: block;
     overflow: hidden;
 }
@@ -389,7 +390,7 @@ About Section
 #about .wrapper {
     width: 100%;
     margin: 0 auto;
-    margin-top: -16.875em;
+    margin-top: -15.875em;
 }
 
 #about img {
@@ -416,7 +417,7 @@ About Section
 #form {
     position: relative;
     width: 31.250em;
-    margin: 3.125em auto auto 4em;
+    margin: 1.125em auto auto 0em;
 }
 
 #submit {
@@ -480,6 +481,7 @@ About Section
 ========================================================================== */
 #page {
   background-color: #DDD;
+  text-align: center;
 }
 #page .wrapper {
     width: 100%;
@@ -488,28 +490,35 @@ About Section
     margin-top: -10.875em;
 }
 #page h3{
-  margin: 0;
+  margin: 0 320px 0 320px;
   font-size: 16px;
 }
 #page h4{
   font-size: 20px;
   font-weight: bolder;
 }
+
 @media only screen and (max-width: 766px) {
+  #page .wrapper {
+  margin-top: -8em;
+  }
   #page h2 {
-      font-size: 20px;
-      text-align: left;
+      font-size: 18px;
+      text-align: center;
       position: justify;
-      margin: 0 2em 0 0;
+      margin: 0 0em 0 4em;
   }
   #page h3, #page h4{
-      font-size: 18px;
-      text-align: left;
+      font-size: 14px;
+      text-align: center;
       position: justify;
-      margin: 0 2em 0 0;
+      margin: 0 0em 0 4em;
   }
   #page img{
     width: 20%;
+  }
+  #fbshare {
+      margin-left: 15%;
   }
 }
 
@@ -741,9 +750,6 @@ nav ul a {
     float: left;
 }
 
-#fbshare {
-    margin-left: 5%;
-}
 
 @media only screen and (max-width: 766px) {
     #footer {
