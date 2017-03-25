@@ -97,12 +97,14 @@ $('#form').submit(function(e) {
   $button.attr('disabled', true);
   $button.attr('value', 'APPLYING ...');
 
-  $.post('http://api.marbl.io/v1/invites', JSON.parse(JSON.stringify({
+  var data = {
     browser: browser,
     name: name,
     email: email,
     instagram: instagram,
-  }))).success(function(data) {
+  };
+
+  $.post('http://api.marbl.io/v1/invites', data).success(function(data) {
     var
       code = data.code,
       place = data.placeInQueue,
