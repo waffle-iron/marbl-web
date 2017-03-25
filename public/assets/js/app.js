@@ -121,7 +121,7 @@ $('#form').submit(function(e) {
   }
 
   var request = window.superagent;
-  request.post('http://api.marbl.io/v1/invites')
+  request.post('https://marbl-api.herokuapp.com/v1/invites')
     .send(data)
     .end(function(err, response) {
       if (err) {
