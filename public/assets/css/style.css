@@ -556,6 +556,57 @@ navigation
 ====================
 */
 
+nav.navbar,
+nav.navbar {
+  position: absolute;
+}
+
+nav.navbar button,
+nav.navbar button {
+  width: 120px;
+  height: 32px;
+  margin-top: -5px;
+  font-size: 14px;
+}
+
+.navbar-brand {
+  padding: 30px 15px;
+}
+
+.navbar .navbar-brand img {
+  height: 35px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0px;
+  max-height: 70px;
+  z-index: 999;
+  width: 100%;
+  padding-top: 17px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.6s ease-out;
+  -ms-transition: all 0.6s ease-out;
+  transition: all 0.3s;
+  background-color: transparent !important;
+  top: -100px;
+  padding-bottom: 6px;
+  font-family: 'Raleway', 'Raleway', sans-serif;
+}
+
+.navbar.scrolled {
+  opacity: 0.5;
+  background-color: white !important;
+}
+
+
+.navbar.sticky {
+  background-color: rgba(255, 255, 255, 0.93);
+  opacity: 1;
+  top: 0px;
+  border-bottom: 0px solid gainsboro;
+}
+
 /*
 ====================
 footer
@@ -804,59 +855,64 @@ About Section
 /* ==========================================================================
 // Welcome Page
 ========================================================================== */
-/*
-#page {
-  background-color: #DDD;
+
+.welcome {
+  width: 100%;
+  height: auto;
+  min-height: 90vh;
+  background-color: #ddd;
   text-align: center;
 }
-#page .wrapper {
-    width: 100%;
-    margin: 0 auto;
-    margin-left: -60px;
-}
-#page h3{
-  margin: 0 320px 0 320px;
-  font-size: 16px;
-}
-#page h4{
-  font-size: 20px;
-  font-weight: bolder;
+
+.welcome h2,
+.welcome h3,
+.welcome h4,
+.welcome h5,
+.welcome h6,
+.welcome p {
+  color: #403882;
+  letter-spacing: 0.1em;
 }
 
-@media only screen and (max-width: 766px) {
-  #page .wrapper {
-  margin-top: -8em;
-  }
-  #page h2 {
-      font-size: 18px;
-      text-align: center;
-      position: justify;
-      margin: 0 0em 0 4em;
-  }
-  #page h3, #page h4{
-      font-size: 14px;
-      text-align: center;
-      position: justify;
-      margin: 0 0em 0 4em;
-  }
-  #page img{
-    width: 20%;
-  }
-  #fbshare {
-      margin-left: 15%;
-  }
+.welcome p {
+  line-height: 1.5em;
 }
-*/
+
+.welcome ul {
+  list-style: none;
+  width: 580px;
+  display: block;
+  margin: 0 auto;
+}
+
+.welcome ul li {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+}
+
+.welcome ul li img {
+  width: 120px;
+  height: auto;
+  display: inline-block;
+}
 
 /* ==========================================================================
 // Privacy Policy
 ========================================================================== */
 
-/*
 #privacy {
-    background-color: #DDDDDD;
+  background-color: #DDDDDD;
 }
 
+#privacy p {
+  color: #403882;
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: 0.1em;
+}
+
+/*
 #privacy .wrapper {
     width: 100%;
     margin: 0 auto;

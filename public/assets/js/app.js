@@ -45,21 +45,21 @@ function checkScroll(){
 ========================================================================== */
 
 $(window).load( function(){
-  $('.main_h').addClass('sticky');
+  $('.navbar').addClass('sticky');
 });
 
 $(window).scroll(function() {
     if ($(window).scrollTop() > 0) {
-        $('.main_h').removeClass('sticky');
+        $('.navbar').removeClass('sticky');
     } else {
-        $('.main_h').addClass('sticky');
+        $('.navbar').addClass('sticky');
     }
 });
 
-if($('.main_h').length > 0){
-    $(window).on("scroll load resize", function(){
-        checkScroll();
-    });
+if($('.navbar').length > 0){
+  $(window).on("scroll load resize", function(){
+    checkScroll();
+  });
 }
 
 $('.btn-join').click(function(e) {
