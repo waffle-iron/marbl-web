@@ -104,28 +104,38 @@ $('#form').submit(function(e) {
     instagram: instagram,
   };
 
-  $.post('http://api.marbl.io/v1/invites', data).success(function(data) {
-    var
-      code = data.code,
-      place = data.placeInQueue,
-      path = '/welcome?code=' + code + '&place=' + place;
-
-    window.location = path;
-  }).error(function(error) {
-    console.log('error', arguments);
+  function handleError(err) {
     $button.attr('disabled', false);
     $button.attr('value', 'APPLY');
 
     var message = 'Uh-oh. We were unable to process your application. Please try again.';
 
     try {
-      message = JSON.parse(error.responseText).message;
+      message = JSON.parse(err).message;
     } catch (e) {
       console.log(e);
     }
 
     alert(message);
-  });
+  }
+
+  var request = window.superagent;
+  request.post('http://api.marbl.io/v1/invites')
+    .send(data)
+    .end(function(err, response) {
+      if (err) {
+        return handleError(err);
+      } else if (!response || !response.body) {
+        return handleError();
+      }
+
+      var
+        code = response.body.code,
+        place = response.body.placeInQueue,
+        path = '/welcome?code=' + code + '&place=' + place;
+
+      window.location = path;
+    });
 
   console.log('we did it', name, email, instagram);
 });
