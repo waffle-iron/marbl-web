@@ -1,61 +1,44 @@
 <% include partials/header %>
 
-<div id="landing">
-  <section id="cover">
-    <div class="wrapper">
-      <div id="covercontainer"></div>
+<section class='home-landing'>
+  <div class="container">
+    <div class="row">
+      <div class="col flex col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <h2>
+          Make the world a smaller place.
+        </h2>
 
-      <br />
-
-      <h2>
-        Make the world a smaller place.
-      </h2>
-
-      <p>
-        <h3>
+        <h4>
           Join our invite-only community of global citizens
           <br>
           and inspire your next adventure.
-        </h3>
-      </p>
+        </h4>
 
-      <br />
+        <br />
 
-      <div class='btn-join'>
-        Join
+        <div class='btn-join'>
+          Join
+        </div>
       </div>
-
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
-<section id="about">
-  <div class="wrapper">
-    <div id="aboutcontainer">
-      <br/><br/>
-      <img src="/assets/img/phone.png" width="330" />
-    </div>
+<section class="home-about">
+  <div class="container">
+    <div class="row">
+      <div id='about' class="col flex col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <p>
+          The world is big. But once you get out there, explore, and meet fellow adventurers,
+          it feels smaller—in the best way possible. That’s where MARBL comes in.
+          Think of us as a gathering place for your most well-traveled friends, where you can
+          get inspiration and learn the best kept travel secrets for your next bucket list adventure.
+        </p>
 
-    <a href="about"></a>
-    <h3>
-      <p>
-        The world is big. But once you get out there, explore, and meet fellow adventurers,
-        it feels smaller—in the best way possible. That’s where MARBL comes in.
-      </p>
-      <p>
-        Think of us as a gathering place for your most well-traveled friends, where you can
-        get inspiration and learn the best kept travel secrets for your next bucket list adventure.
-      </p>
+        <p>
+          So what you are you waiting for? Join the MARBL community today.
+        <p/>
 
-      <p>
-        So what you are you waiting for?
-      <p/>
-
-      <p>
-        Join the MARBL community today.
-      <p/>
-
-      <div>
         <form
           id="form"
           class="growthloop"
@@ -67,8 +50,11 @@
             <input id="submit" name="submit" type="submit" value="APPLY" />
         </form>
       </div>
-    </h3>
+      <div class="col flex col-lg-4 col-md-4 hidden-sm hidden-xs">
+        <img class='img-center' src="/assets/img/phone.png" />
+      </div>
+    </div>
   </div>
 </section>
 
-  <% include partials/footer %>
+<% include partials/footer %>
