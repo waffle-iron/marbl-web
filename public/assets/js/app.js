@@ -68,6 +68,7 @@ $('.btn-join').click(function(e) {
 
 // intercept signups
 $('#form').submit(function(e) {
+  console.log('e', e);
   e.preventDefault();
   e.stopPropagation();
 
